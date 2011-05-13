@@ -12,6 +12,7 @@ gem 'rspec', '>=2.0.0.beta.22'
 gem 'rspec-rails', '>=2.0.0.beta.22'
 gem 'autotest'
 gem 'autotest-rails'
+gem 'webrat', '0.7.1'
 end
 
 # Use unicorn as the web server

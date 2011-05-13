@@ -1,0 +1,13 @@
+.bundle
+db/*.mysql2*
+log/*.log
+*.log
+tmp/**/*
+tmp/*
+doc/api
+doc/app
+*.swp
+*~
+.redcar
+.DS_Store
+

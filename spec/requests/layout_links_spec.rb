@@ -21,4 +21,29 @@ describe "LayoutLinks" do
      get '/help'
      response.should have_selector('title', :content => "Help")
    end
+
+   it "should have a SignUp page at '/signup'" do
+     get '/signup'
+     response.should have_selector('title', :content => "SignUp")
+   end
+
+   it "should have the right links on the layout" do
+     visit root_path
+     response.should have_selector('title', :content => "Home")
+     click_link "Home"
+     response.should have_selector('title', :content => "Home")
+     click_link "About"
+     response.should have_selector('title', :content => "About")
+     click_link "Contact"
+     response.should have_selector('title', :content => "Contact")
+     click_link "Help"
+     response.should have_selector('title', :content => "Help")
+
+     visit root_path # runs test for signup link just on home page
+     click_link "Sign Up Now"
+     response.should have_selector('title', :content => "SignUp")
+     #should be img tag for logo in home link on logo image
+     response.should have_selector('a[href="/"]>img')
+   end
+
 end
